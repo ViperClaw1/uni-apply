@@ -22,3 +22,9 @@ browser-sessions/
 apps/worker/zzu-wizard-recon.json
 apps/worker/dry-run-*.png
 apps/worker/member-dashboard.png
+# build/tool junk
+.turbo/
+*.stackdump
+tmp-*
+*.lock.yaml.*
+pnpm-lock.yaml.*

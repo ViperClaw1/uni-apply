@@ -1,4 +1,6 @@
-# uni-apply
+# LotsApply
+
+LotsApply — end-to-end university application automation platform for international students applying to world-wide universities. Students submit their data and documents via Google Form. The system parses uploaded documents (passport, transcripts, etc.) using Gemini OCR, stores structured profiles, and auto-generates motivation letters.
 
 Монорепо для автоматизации подачи заявок в китайские университеты. Агентство собирает профиль студента, документы и мотивационные письма, затем подаёт заявки через порталы вузов.
 
