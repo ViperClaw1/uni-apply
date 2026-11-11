@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Uni Apply Helper",
+  "version": "1.0.0",
+  "description": "Semi-automatic university application form filler",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "http://localhost:3001/*",
+      "http://127.0.0.1:3001/*",
+      "https://*.vercel.app/*"
+    ]
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content/index.ts-loader.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "src/side-panel/index.html"
+  },
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_title": "Uni Apply Helper"
+  },
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "**/*",
+        "*"
+      ],
+      "use_dynamic_url": false
+    }
+  ]
+}

@@ -87,8 +87,9 @@ export function useHiwScrollLock(
     document.body.style.right = "";
     document.body.style.width = "";
     document.body.style.overflow = "";
-    window.scrollTo(0, y);
-    requestAnimationFrame(() => window.scrollTo(0, y));
+    // html has scroll-smooth: without the instant restore the smooth scroll starts from 0 (page top).
+    window.scrollTo({ top: lockMetaRef.current.scrollY, behavior: "instant" });
+    window.scrollTo({ top: y, behavior: "smooth" });
   }, []);
 
   const lock = useCallback(

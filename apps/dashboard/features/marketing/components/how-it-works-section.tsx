@@ -51,7 +51,7 @@ export function HowItWorksSection() {
                       key={index}
                       data-hiw-caption
                       data-active={active || undefined}
-                      className="absolute inset-x-0 top-0 transition-[opacity,transform] duration-[450ms] ease-in-out motion-reduce:transition-none data-[active]:pointer-events-auto data-[active]:translate-y-0 data-[active]:opacity-100 pointer-events-none translate-y-4 opacity-0"
+                      className="absolute inset-x-0 top-0 transition-[opacity,transform] duration-450 ease-in-out motion-reduce:transition-none data-active:pointer-events-auto data-active:translate-y-0 data-active:opacity-100 pointer-events-none translate-y-4 opacity-0"
                     >
                       <p className="text-xs font-semibold uppercase tracking-wide text-blue-600">
                         {caption.step}
@@ -103,7 +103,7 @@ export function HowItWorksSection() {
                     data-hiw-panel
                     data-kind={slide.kind}
                     data-active={active || undefined}
-                    className={`group absolute inset-x-0 top-9 bottom-0 p-6 transition-[opacity,transform] duration-[450ms] ease-in-out motion-reduce:transition-none ${
+                    className={`group absolute inset-x-0 top-9 bottom-0 p-6 transition-[opacity,transform] duration-450 ease-in-out motion-reduce:transition-none ${
                       active
                         ? "z-10 translate-y-0 opacity-100"
                         : "z-0 pointer-events-none translate-y-4 opacity-0"
@@ -165,7 +165,7 @@ function FormSlide({
       <div className="h-1 w-full overflow-hidden rounded-full bg-slate-100">
         <div
           data-hiw-progress
-          className="h-full origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-500 ease-linear motion-reduce:scale-x-100 group-data-[active]:scale-x-100"
+          className="h-full origin-left scale-x-0 rounded-full bg-blue-600 transition-transform duration-500 ease-linear motion-reduce:scale-x-100 group-data-active:scale-x-100"
         />
       </div>
       <p className="mt-3 text-xs font-semibold text-blue-600">{step}</p>
@@ -206,7 +206,7 @@ function UploadSlide() {
             <span
               data-hiw-check
               style={{ transitionDelay: `${index * 80}ms` }}
-              className="flex h-5 w-5 scale-75 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 opacity-0 transition-all duration-300 ease-out motion-reduce:scale-100 motion-reduce:opacity-100 group-data-[active]:scale-100 group-data-[active]:opacity-100"
+              className="flex h-5 w-5 scale-75 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 opacity-0 transition-all duration-300 ease-out motion-reduce:scale-100 motion-reduce:opacity-100 group-data-active:scale-100 group-data-active:opacity-100"
             >
               <CheckIcon />
             </span>
@@ -250,7 +250,7 @@ function UniversitiesSlide() {
                 <span
                   data-hiw-check
                   style={{ transitionDelay: `${index * 80}ms` }}
-                  className="inline-flex scale-75 opacity-0 transition-all duration-300 ease-out motion-reduce:scale-100 motion-reduce:opacity-100 group-data-[active]:scale-100 group-data-[active]:opacity-100"
+                  className="inline-flex scale-75 opacity-0 transition-all duration-300 ease-out motion-reduce:scale-100 motion-reduce:opacity-100 group-data-active:scale-100 group-data-active:opacity-100"
                 >
                   <CheckIcon />
                 </span>
@@ -276,14 +276,14 @@ function ApplySlide() {
       <div className="relative mt-6 flex h-12 w-56 items-center justify-center">
         <div
           data-hiw-apply-loading
-          className="absolute inset-0 flex items-center justify-center gap-2 rounded-xl bg-blue-600 text-sm font-semibold text-white transition-opacity duration-200 motion-reduce:opacity-0 group-data-[active]:opacity-100"
+          className="absolute inset-0 flex items-center justify-center gap-2 rounded-xl bg-blue-600 text-sm font-semibold text-white transition-opacity duration-200 motion-reduce:opacity-0 group-data-active:opacity-100"
         >
           <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" />
           {t.landing.howItWorks.submitting}
         </div>
         <div
           data-hiw-apply-done
-          className="absolute inset-0 flex items-center justify-center gap-2 rounded-xl bg-emerald-600 text-sm font-semibold text-white opacity-0 transition-opacity delay-200 duration-200 motion-reduce:opacity-100 group-data-[active]:opacity-100"
+          className="absolute inset-0 flex items-center justify-center gap-2 rounded-xl bg-emerald-600 text-sm font-semibold text-white opacity-0 transition-opacity delay-200 duration-200 motion-reduce:opacity-100 group-data-active:opacity-100"
         >
           <CheckIcon />
           {APPLY_UNIVERSITY_COUNT} {t.landing.howItWorks.applicationsSubmitted}
@@ -312,19 +312,19 @@ function StatusSlide() {
           <span className="relative inline-flex h-5 w-24 shrink-0 items-center justify-end">
             <span
               data-hiw-status-a
-              className="absolute right-0 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-500 ring-1 ring-slate-200 transition-opacity duration-150 motion-reduce:opacity-0 group-data-[active]:opacity-100"
+              className="absolute right-0 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-500 ring-1 ring-slate-200 transition-opacity duration-150 motion-reduce:opacity-0 group-data-active:opacity-100"
             >
               {t.landing.howItWorks.statusDraft}
             </span>
             <span
               data-hiw-status-b
-              className="absolute right-0 rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-medium text-amber-700 opacity-0 ring-1 ring-amber-100 transition-opacity duration-150 group-data-[active]:opacity-100 group-data-[active]:delay-150"
+              className="absolute right-0 rounded-full bg-amber-50 px-2 py-0.5 text-[11px] font-medium text-amber-700 opacity-0 ring-1 ring-amber-100 transition-opacity duration-150 group-data-active:opacity-100 group-data-active:delay-150"
             >
               {t.landing.howItWorks.statusInProgress}
             </span>
             <span
               data-hiw-status-c
-              className="absolute right-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700 opacity-0 ring-1 ring-emerald-100 transition-opacity duration-150 motion-reduce:opacity-100 group-data-[active]:opacity-100 group-data-[active]:delay-300"
+              className="absolute right-0 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-medium text-emerald-700 opacity-0 ring-1 ring-emerald-100 transition-opacity duration-150 motion-reduce:opacity-100 group-data-active:opacity-100 group-data-active:delay-300"
             >
               {t.landing.howItWorks.statusSubmitted}
             </span>
